@@ -1,0 +1,22 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'net.jimthescientist.mushroomfinder.Main'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+def version = '0.0.0'
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+}
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Official Gradle Jar',
+                'Implementation-Version': archiveVersion,
+                'Main-Class': mainClassName
+    }
+    archiveBaseName = 'MushroomFinder'
+    archiveVersion =  version
+}
